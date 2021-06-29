@@ -1,0 +1,56 @@
+{% extends 'UploadFiles/main.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="search-container">
+        <div class="col-md-12">
+            <form action="{% url 'browse_result' %}" method="get"autocomplete="off">
+                <div class="input-group">
+                    <select class="custom-select col-sm-2">
+                        <option selected >Subject</option>
+                        <option >Author</option>
+                        <option >Category</option>
+                    </select>
+                    <input type="text" name="query" required id="search" placeholder="Search For Books Author Category And More....." class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-dark search-btn" id="submit" type="submit">Search</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h6 class="container" style="color:gray;margin-top:20px;"> Search Result :{{all_posts.paginator.count}} / {{all}}</h6><hr style="background-color:#207396;">
+    {% if object_list|length < 1 %}
+        <div class="container alert alert-danger">
+            <p>Your search- <b>{{query|truncatechars:60}}</b> -did not match any result</p>
+            Suggestions:
+            <ul>
+                <li>No Search Result Found: </li>
+                <li>Make sure that all words are spelled correctly.</li>
+                <li>Try different keywords.</li>
+                <li>Try more general keywords</li>   
+            </ul> 
+        </div>
+    {% endif %}
+        <div class="container">
+            {% for obj in object_list %}
+                {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card promoting-card">
+                        <div class="card-body";">
+                            <div class="card-header"><h5 class="ebookname">{{obj.eBookName }}</h5></div>
+                            <img class="img-fluid" src="{{obj.thumbnail.url}}" class="card-img-top" alt="{{obj.eBookName}}">
+                        </div>
+                        <div>
+                            <h6 class="author">AUTHOR : {{obj.author}}</h6>
+                            <a href="{{obj.eBookFile.url}}" role="button" class="btn btn-dark" style="margin-bottom: 20px;margin-top:10px;">View Book</a>
+                        </div>
+                    </div>
+                </div>
+            {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><hr>{%  endif %}
+            {%  endfor %}
+        </div>
+
+        {% include 'UploadFiles/pagination.html' %}
+
+{% endblock %}

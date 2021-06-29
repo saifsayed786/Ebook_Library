@@ -1,0 +1,19 @@
+{% extends 'UploadFiles/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="search-container">
+    <div class="col-md-12">
+        <form action="{% url 'newsearchresult' %}"  method="get"autocomplete="off">
+            <div class="input-group">
+                <input type="text" required  id="search"  name="query" placeholder="Search For Books Author Category And More....." class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn  btn-dark search-btn" id="submit" type="submit">Search</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+

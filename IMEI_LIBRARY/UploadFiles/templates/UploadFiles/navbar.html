@@ -1,0 +1,26 @@
+    <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid navcontain">
+        <a class="navbar-brand" href="{% url 'home' %}">LOGO</a>
+    <button class="btn btn-light d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-align-justify"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'browse' %}">Browse Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'A-Z_Search' %}">A-Z Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    </nav>

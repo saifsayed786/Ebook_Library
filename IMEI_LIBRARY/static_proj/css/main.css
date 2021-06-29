@@ -1,0 +1,162 @@
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    
+}
+
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.navbar-brand{
+
+    padding-left: 80px;
+    color: #ffff;
+}
+.navbar {
+    padding: 15px 10px;
+    background: #207396;
+    border: none;
+    border-radius: 0;
+    /*margin-bottom: 40px;*/
+
+}
+
+.navbar-btn {
+    display: none;
+    box-shadow: 1px 1px #207396;
+    outline: none !important;
+    border-color: #207396;
+}
+
+
+.nav-item > a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+  }
+  .nav-item > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  .nav-item > a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+.nav-item a{
+    color:#ffff;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    perspective: 1500px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+
+/* search css */
+.search-container{
+    background:#47a5ce;
+    min-height:100px;
+    padding: 30px;
+    
+}
+.search-btn{
+    margin-left:5px;
+}
+
+/* Card css */
+
+.card {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    transition: .5s;
+    width:18rem;
+    height: auto;
+    margin-top:20px;
+    border-style:solid;
+    border-color:black;
+
+}
+
+.card:hover {
+    transform:scale(1.1);
+    
+}
+    
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+.img-fluid {
+
+    height: auto;
+    max-height: 170px;
+    min-height: 100px;
+    width: 100%;
+}
+.card-header,.card-footer{
+    background: white;
+}
+.ebookname{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+    letter-spacing:1px;
+
+}
+.author{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height:.5rem;
+    letter-spacing:1px;
+    font-weight:bold;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    .navbar-brand{
+        padding-left: 40%;
+    }
+    .navbar-btn{
+        display: block;
+    }
+
+
+}

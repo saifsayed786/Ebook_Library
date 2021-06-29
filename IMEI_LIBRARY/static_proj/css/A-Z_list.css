@@ -1,0 +1,23 @@
+.list-container{
+    background:#47a5ce;
+    padding: 20px;
+}
+
+.container{
+
+margin-right: 20px;
+}
+
+.list{
+padding:3px;
+
+}
+.list input{
+font-size: small;
+}
+.lbt{
+
+color: rgb(255, 255, 255);
+height: 21px;
+line-height: 1em;
+}
